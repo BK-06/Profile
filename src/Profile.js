@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const Profile = (authorized) => {
+  const navigate = useNavigate();
 
   const [signupData, setSignupData] = useState(null);
 
@@ -11,6 +13,7 @@ const Profile = (authorized) => {
     localStorage.removeItem('signupData');
     // Reset the signup data state
     setSignupData(null);
+    navigate('/login')
   };
 
   useEffect(() => {
@@ -19,6 +22,8 @@ const Profile = (authorized) => {
     if (storedSignupData) {
       const parsedSignupData = JSON.parse(storedSignupData);
       setSignupData(parsedSignupData);
+    } else {
+      navigate('/login');
     }
   }, []);
 
