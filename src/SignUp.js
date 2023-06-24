@@ -51,12 +51,13 @@ export default function SignUp() {
 
 
     return (
-        <div>
+        <div className="container justify-content-center text-center">
         <h1>Signup Page</h1>
         <form onSubmit={handleSubmit}>
-            <div>
-            <label htmlFor="firstName">First Name:</label>
+            <div className="input-group">
+            <label className="input-group-text" htmlFor="firstName">First Name:</label>
             <input
+            className="form-control"
                 type="text"
                 id="firstName"
                 value={firstName}
@@ -64,9 +65,10 @@ export default function SignUp() {
                 required
             />
             </div>
-            <div>
-            <label htmlFor="email">Email:</label>
+            <div className="input-group">
+            <label className="input-group-text" htmlFor="email">Email:</label>
             <input
+                className="form-control"
                 type="email"
                 id="email"
                 value={email}
@@ -74,9 +76,10 @@ export default function SignUp() {
                 required
             />
             </div>
-            <div>
-            <label htmlFor="password">Password:</label>
+            <div className="input-group">
+            <label className="input-group-text" htmlFor="password">Password:</label>
             <input
+                className="form-control"
                 type="password"
                 id="password"
                 value={password}
@@ -84,9 +87,10 @@ export default function SignUp() {
                 required
             />
             </div>
-            <div>
-                <label htmlFor="confirmPassword">Confirm Password:</label>
+            <div className="input-group">
+                <label className="input-group-text" htmlFor="confirmPassword">Confirm Password:</label>
                 <input
+                    className="form-control"
                     type="password"
                     id="confirmPassword"
                     value={confirmPassword}
@@ -95,7 +99,7 @@ export default function SignUp() {
                 />
             </div>
             {passwordMatchError && <p>Passwords do not match</p>}
-            <button type="submit">Sign up</button>
+            <button className="btn btn-primary mt-2" type="submit">Sign up</button>
         </form>
         </div>
     );

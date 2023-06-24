@@ -28,14 +28,16 @@ const Profile = (authorized) => {
   }, []);
 
   return (
-    <div>
+    <div className='container'>
+      <div className='card theme-black'>
+
       <h1>Profile</h1>
       {signupData ? (
         <div>
           <p>First Name: {signupData.firstName}</p>
           <p>Email: {signupData.email}</p>
           <p>Password: {signupData.password}</p>
-          <button onClick={handleLogout}>Logout</button>
+          <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
           
         </div>
       ) : (
@@ -43,9 +45,10 @@ const Profile = (authorized) => {
           <p>First Name:</p>
           <p>Email:</p>
           <p>Password:</p>
-          <button onClick={handleLogout}>Logout</button>
+          <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
         </div>
       )}
+      </div>
     </div>
   );
 };
